@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "animated-drawer",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -28,6 +29,9 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }

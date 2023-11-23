@@ -16,6 +16,7 @@ module.exports = {
   ],
   rules: {
     'import/no-commonjs': 'off',
+    "react-native/no-inline-styles": 'off',
   },
   settings: {
     react: {

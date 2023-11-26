@@ -4,7 +4,6 @@ import { View } from 'react-native';
 import styled from 'styled-components/native';
 
 const Wrapper = styled(View)<{ top: number; bottom: number }>`
-    padding-top: ${({ top }) => top}px;
     padding-horizontal: 16px;
 `;
 

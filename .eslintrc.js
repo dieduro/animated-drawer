@@ -2,6 +2,9 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json'
+  },
   plugins: [
     '@typescript-eslint',
     'react',
@@ -12,7 +15,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:react-native/all'
+    'plugin:react-native/all',
+    'airbnb-typescript'
   ],
   rules: {
     'import/no-commonjs': 'off',

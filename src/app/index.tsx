@@ -12,7 +12,7 @@ const Page: ScreenComponent<ScreenName.START> = () => {
           <Text>CART</Text>
       </View>
       </ScreenLayout>
-  )
-}
+  );
+};
 
 export default Page;

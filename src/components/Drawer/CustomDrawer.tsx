@@ -1,8 +1,8 @@
 
-import React from "react";
-import { Text, View } from "react-native";
-import { styled } from "styled-components/native";
-import DrawerItemList from "./DrawerItemList";
+import React from 'react';
+import { Text, View } from 'react-native';
+import { styled } from 'styled-components/native';
+import DrawerItemList from './DrawerItemList';
 
 const Wrapper = styled(View)`
     background-color: #16203A;
@@ -19,12 +19,12 @@ const Title = styled(Text)`
 
 const CustomDrawer = () => {
 
-    return (
+  return (
         <Wrapper>
             <Title>Die</Title>
             <DrawerItemList />
         </Wrapper>
-    )
-}
+  );
+};
 
 export default CustomDrawer;

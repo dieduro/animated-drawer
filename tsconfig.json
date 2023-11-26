@@ -18,7 +18,7 @@
     "node_modules/expo-router",
     "babel.config.js",
     "metro.config.js",
-    "jest.config.js"
+    "jest.config.js",
   ],
   "extends": "expo/tsconfig.base",
   "include": [

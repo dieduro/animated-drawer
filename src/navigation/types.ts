@@ -2,10 +2,10 @@ import type { NativeStackScreenProps, NativeStackNavigationProp } from '@react-n
 import { ScreenName } from './enum';
 
 type RootStackParamList = {
-    [ScreenName.START]: undefined;
-    [ScreenName.CART]: undefined;
-    [ScreenName.FAVOURITES]: undefined;
-    [ScreenName.ORDERS]: undefined;
+  [ScreenName.START]: undefined;
+  [ScreenName.CART]: undefined;
+  [ScreenName.FAVOURITES]: undefined;
+  [ScreenName.ORDERS]: undefined;
 };
 
 export type ScreenProps<Name extends keyof RootStackParamList> = NativeStackScreenProps<RootStackParamList, Name>;

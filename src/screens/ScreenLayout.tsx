@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -5,9 +6,9 @@ import SafeAreaWrapper from '../components/SafeAreaWrapper';
 import styled from 'styled-components/native';
 import { ScreenName, ScreenTitles } from '../navigation/enum';
 import { 
-    useNavigation, 
-    ParamListBase 
-  } from "@react-navigation/native"
+  useNavigation, 
+  ParamListBase, 
+} from '@react-navigation/native';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
 
 
@@ -23,10 +24,10 @@ const Title = styled(Text)`
 `;
 
 const ScreenLayout = ({ name, children }: { name: ScreenName; children: React.ReactNode }) => {
-    const iconColor = '#64748b';
-    const navigation = useNavigation<DrawerNavigationProp<ParamListBase>>();
+  const iconColor = '#64748b';
+  const navigation = useNavigation<DrawerNavigationProp<ParamListBase>>();
 
-    return (
+  return (
         <SafeAreaWrapper>
             <TitleWrapper>
             <TouchableOpacity onPress={() => navigation.openDrawer()}>
@@ -36,7 +37,7 @@ const ScreenLayout = ({ name, children }: { name: ScreenName; children: React.Re
             </TitleWrapper>
             {children}
         </SafeAreaWrapper>
-    )
-}
+  );
+};
 
 export default ScreenLayout;

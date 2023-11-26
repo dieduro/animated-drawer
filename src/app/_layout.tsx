@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { ScreenName, ScreenTitles } from "../navigation/enum";
+import { ScreenName, ScreenTitles } from '../navigation/enum';
 import { Drawer } from 'expo-router/drawer';
-import CustomDrawer from "../components/Drawer/CustomDrawer";
+import CustomDrawer from '../components/Drawer/CustomDrawer';
 
 const Layout = () => {
-    return (
+  return (
         <SafeAreaProvider>
             <Drawer 
-                screenOptions={{ overlayColor: 'transparent'}}
+                screenOptions={{ overlayColor: 'transparent' }}
                 drawerContent={() => <CustomDrawer />}
             >
                 <Drawer.Screen
@@ -29,7 +29,7 @@ const Layout = () => {
                 />
             </Drawer>
     </SafeAreaProvider>
-    )
-}
+  );
+};
 
 export default Layout;

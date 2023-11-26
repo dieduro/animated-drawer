@@ -1,7 +1,7 @@
-import React from "react";
-import { useNavigation } from "expo-router";
-import { View } from "react-native";
-import ListItem from "./ListItem";
+import React from 'react';
+import { useNavigation } from 'expo-router';
+import { View } from 'react-native';
+import ListItem from './ListItem';
 
 const DrawerItemList = () => {
   const { navigate } = useNavigation();
@@ -20,9 +20,9 @@ const DrawerItemList = () => {
           title={route.name}
           onPress={() => handlePress(route.name)}
         />
-      ))}
+        ))}
     </View>
   );
-}
+};
 
 export default DrawerItemList;

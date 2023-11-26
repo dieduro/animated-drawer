@@ -85,7 +85,7 @@ const ScreenLayout = ({ name, children }: { name: ScreenName; children: React.Re
         <SafeAreaWrapper>
             <TitleWrapper>
             <TouchableOpacity onPress={() => navigation.openDrawer()}>
-                <Feather name="menu" size={24} color={iconColor} />
+                <Feather name="menu" size={28} color={iconColor} />
             </ TouchableOpacity>
                 <Title>{ScreenTitles[name].toUpperCase()}</Title>
             </TitleWrapper>

@@ -25,7 +25,6 @@ const UserName = styled(Text)`
     font-weight: 800;
     color: #fff;
     text-align: center;
-    margin-bottom: 20px;
 `;
 
 const CustomDrawer = (props: DrawerContentComponentProps) => {
@@ -53,7 +52,7 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
                 <DrawerItemList />
             </DrawerContentScrollView>
         </DrawerMenu>
-        </Wrapper>
+    </Wrapper>
   );
 };
 

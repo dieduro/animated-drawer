@@ -12,8 +12,9 @@ This is a React Native app that features an animated drawer as its main navigati
 - react-native-reanimated
 
 ## Demo
-
-<video src="https://github.com/dieduro/animated-drawer/assets/29646999/cea67dbc-003f-49e9-acda-32c64a7b7a65">
+<p>
+  <video src="https://github.com/dieduro/animated-drawer/assets/29646999/cea67dbc-003f-49e9-acda-32c64a7b7a65">
+</p>
 
 ## Thought proccess
 

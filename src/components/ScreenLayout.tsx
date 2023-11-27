@@ -2,14 +2,14 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import SafeAreaWrapper from '../components/SafeAreaWrapper';
+import SafeAreaWrapper from './SafeAreaWrapper';
 import styled, { useTheme } from 'styled-components/native';
 import { ScreenName, ScreenTitles } from '../navigation/enum';
 import { 
   useNavigation, 
   ParamListBase, 
 } from '@react-navigation/native';
-import { DrawerNavigationProp, useDrawerProgress } from '@react-navigation/drawer';
+import { DrawerNavigationProp, useDrawerProgress, useDrawerStatus } from '@react-navigation/drawer';
 import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -19,10 +19,10 @@ const MainWrapper = styled(Animated.View)`
   width: 100%;
 `;
 
-const Wrapper = styled(Animated.View)`
+const Wrapper = styled(Animated.View)<{ animating: boolean }>`
   height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
-  border-top-left-radius: 24px;
+  border-top-left-radius: ${({ animating }) => animating ? '24px' : 0};
 `;
 
 const TitleWrapper = styled(View)`
@@ -44,6 +44,7 @@ const ScreenLayout = ({ name, children }: { name: ScreenName; children: React.Re
 
   const { top } = useSafeAreaInsets();
   const drawerProgress = useDrawerProgress();
+  const drawerStatus = useDrawerStatus();
   const { width } = useWindowDimensions();
   const PAGE_OFFSET = 60;
 
@@ -82,7 +83,7 @@ const ScreenLayout = ({ name, children }: { name: ScreenName; children: React.Re
 
   return (
     <MainWrapper style={mainWrapperStyles}>
-      <Wrapper style={viewStyles}>
+      <Wrapper style={viewStyles} animating={drawerStatus === 'open'}>
         <SafeAreaWrapper>
             <TitleWrapper>
             <TouchableOpacity onPress={() => navigation.openDrawer()}>

@@ -6,7 +6,6 @@ import { theme } from '.';
 const StyledThemeProvider = (
   { children }: { children: ReactNode },
 ) => {
-  console.log(theme);
   return (
         <ThemeProvider theme={theme}>
             {children}

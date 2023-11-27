@@ -13,6 +13,8 @@ This is a React Native app that features an animated drawer as its main navigati
 
 ## Demo
 
+<video src="https://github.com/dieduro/animated-drawer/assets/29646999/cea67dbc-003f-49e9-acda-32c64a7b7a65" />
+
 ## Thought proccess
 
 I faced this project wanting to implement Expo Router because I had not used it before. And this was definitely the most challeging and demanding part of the process. Understanding how to structure the app so it would work as expected took me several iterations and quite some time going through [Expo Router](https://docs.expo.dev/routing/introduction/) and [React Navigation](https://reactnavigation.org/docs/drawer-based-navigation/) docs. The missing part of this proccess is to understand why Expo Router keeps naming routes with the `/index` suffix when it's not supposed to (ie: `cart/index`).

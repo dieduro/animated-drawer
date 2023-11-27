@@ -47,7 +47,7 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
   return (
     <Wrapper>
         <DrawerMenu style={viewStyles} >
-            <UserName>Die</UserName>
+            <UserName>Diego</UserName>
             <DrawerContentScrollView {...props} style={{ width: '100%' }}>
                 <DrawerItemList {...props}/>
             </DrawerContentScrollView>

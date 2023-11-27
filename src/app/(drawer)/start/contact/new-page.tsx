@@ -1,18 +1,8 @@
 import React from 'react';
 import { Link, Stack } from 'expo-router';
 import { Text, View } from 'react-native';
-import styled from 'styled-components/native';
-
-const ScreenWrapper = styled(View)`
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`;
-
-const Title = styled(Text)`
-  font-size: 24px;
-  font-weight: bold;
-`;
+import ScreenWrapper from '../../../../components/ScreenWrapper';
+import Title from '../../../../components/ScreenTitle';
 
 const NewPage = () => {
   return (

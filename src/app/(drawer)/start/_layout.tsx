@@ -2,18 +2,16 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
-import { styled } from 'styled-components/native';
+import { styled, useTheme } from 'styled-components/native';
 import { Text } from 'react-native';
 
-const primaryColor = '#EF6767';
-const secondaryColor = '#1b1d2e';
 const TabBarItemLabel = styled(Text)<{ focused: boolean }>`
-  color: ${({ focused }) => (focused ? primaryColor : secondaryColor)};
+  color: ${({ focused, theme }) => (focused ? theme.colors.primary : theme.colors.secondary)};
 `;
 
 export default function TabsLayout() {
-  
-  
+  const { colors } = useTheme();
+
   return (
     <Tabs screenOptions={{ headerShown: false }}>
         <Tabs.Screen
@@ -23,7 +21,7 @@ export default function TabsLayout() {
                   <TabBarItemLabel focused={focused}>Home</TabBarItemLabel>
               ),
               tabBarIcon: ({ focused }) => (
-                <Feather name="home" size={24} color={focused ? primaryColor : secondaryColor} />
+                <Feather name="home" size={24} color={focused ? colors.primary : colors.secondary} />
               ),
             }}
         />
@@ -33,7 +31,7 @@ export default function TabsLayout() {
               tabBarLabel: ({ focused }) => (
                 <TabBarItemLabel focused={focused}>Contact</TabBarItemLabel>
               ),
-              tabBarIcon: ({ focused }) => ( <Feather name="feather" size={24} color={focused ? primaryColor : secondaryColor} />),
+              tabBarIcon: ({ focused }) => ( <Feather name="feather" size={24} color={focused ? colors.primary : colors.secondary} />),
             }}
         />
 

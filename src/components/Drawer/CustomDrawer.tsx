@@ -15,7 +15,7 @@ const Wrapper = styled.View`
 const DrawerMenu = styled(Animated.View)`
     flex: 1;
     align-items: center;
-    background-color: #1b1d2e;
+    background-color: ${({ theme }) => theme.colors.background};
     padding: 58px 0 0;
     border-top-left-radius: 24px;
 `;
@@ -23,7 +23,7 @@ const DrawerMenu = styled(Animated.View)`
 const UserName = styled(Text)`
     font-size: 24px;
     font-weight: 800;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     text-align: center;
 `;
 

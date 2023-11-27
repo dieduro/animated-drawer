@@ -11,13 +11,13 @@ type CustomerDrawerItemProps = {
 
 const Wrapper = styled(View)<{ active: boolean }>`
     padding: 16px;
-    background-color: ${({ active }) => active ? '#EF676733' : 0};
+    background-color: ${({ active, theme }) => active ? `${theme.colors.primary}33` : 0};
     border-radius: 12px;
 `;
 
 const ItemTitle = styled(Text)<{ active: boolean }>`
     font-size: 20px;
-    color: ${({ active }) => active ? '#EF6767' : '#FFF'};
+    color: ${({ active, theme }) => theme.colors[active ? 'primary' : 'white']};
     margin-left: 12px;
 `;
 

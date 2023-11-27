@@ -4,10 +4,12 @@ import { useWindowDimensions } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import CustomDrawer from '../../components/Drawer/CustomDrawer';
 import { ScreenName, ScreenTitles } from '../../navigation/enum';
+import { StyledThemeProvider } from '../../context/Theme/ThemeContext';
 
 const Layout = () => {
   const { width } = useWindowDimensions();
   return (
+    <StyledThemeProvider>
         <SafeAreaProvider>
             <Drawer 
                 screenOptions={{
@@ -51,7 +53,8 @@ const Layout = () => {
                 }}
               />
             </Drawer>
-    </SafeAreaProvider>
+      </SafeAreaProvider>
+    </StyledThemeProvider>
   );
 };
 

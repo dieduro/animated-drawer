@@ -11,7 +11,7 @@ import {
 } from '@react-navigation/native';
 
 const Wrapper = styled(View)`
-margin-top: 32px;
+  margin-top: 32px;
   padding-left: 16px;
   gap: 16px;
   width: 100%;
@@ -24,7 +24,7 @@ const ScreensMenu = styled(View)`
 
 const Divider = styled(View)`
   height: 1px;
-  border: 1px solid #64748bCC;
+  border: 1px solid ${({ theme }) => theme.colors.tertiary};
 `;
 
 const SignOut = styled(CustomDrawerItem)`

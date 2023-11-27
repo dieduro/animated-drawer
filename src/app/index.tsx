@@ -11,7 +11,6 @@ const Page: ScreenComponent<ScreenName.START> = () => {
         <ScreenLayout name={ScreenName.START}>
           <View></View>
         </ScreenLayout>
-      
   );
 };
 

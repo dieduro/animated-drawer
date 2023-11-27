@@ -3,12 +3,27 @@ import { useNavigation } from 'expo-router';
 import { View } from 'react-native';
 import DrawerItem from './DrawerItem';
 import styled from 'styled-components/native';
-import { ScreenName, Screens } from '../../navigation/enum';
+import { ScreenName, ScreenTitles, Screens } from '../../navigation/enum';
 
 const Wrapper = styled(View)`
+margin-top: 32px;
   padding-left: 16px;
   gap: 16px;
   width: 100%;
+`;
+
+const ScreensMenu = styled(View)`
+  width: 100%;
+  margin-bottom: 32px;
+`;
+
+const Divider = styled(View)`
+  height: 1px;
+  border: 1px solid #64748bCC;
+`;
+
+const SignOut = styled(DrawerItem)`
+  margin-top: 32px;
 `;
 
 const DrawerItemList = () => {
@@ -24,16 +39,23 @@ const DrawerItemList = () => {
 
   return (
     <Wrapper>
+      <ScreensMenu>
         {Screens.map(({ name }: { name: string }) => (
           (name.charAt(0) !== '_' && name.charAt(0) !== '[') && (
             <DrawerItem
               key={name}
-              title={name as ScreenName}
+              title={ScreenTitles[name as ScreenName]}
               onPress={() => handlePress(name)}
               active={activeRouteName === name}
           />
           )
         ))}
+      </ScreensMenu>
+      <Divider />
+      <SignOut
+        title="Sign Out"
+        onPress={() => {}}
+      />
     </Wrapper>
   );
 };

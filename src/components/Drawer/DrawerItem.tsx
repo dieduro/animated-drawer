@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import styled from 'styled-components/native';
-import { ScreenName, ScreenTitles } from '../../navigation/enum';
 
 type DrawerItemProps = {
-  title: ScreenName;
+  title: string;
   onPress: () => void;
   active?: boolean;
+  style?: StyleProp<ViewStyle>;
 };
 
 const Wrapper = styled(View)<{ active: boolean }>`
@@ -22,11 +22,11 @@ const ItemTitle = styled(Text)<{ active: boolean }>`
 `;
 
 
-const DrawerItem = ({ title, onPress, active = false }: DrawerItemProps) => {
+const DrawerItem = ({ title, onPress, active = false, style }: DrawerItemProps) => {
   return (
-        <Wrapper active={active}>
+        <Wrapper active={active} style={style}>
             <TouchableOpacity onPress={onPress}>  
-                <ItemTitle active={active}>{ScreenTitles[title]}</ItemTitle>
+                <ItemTitle active={active}>{title}</ItemTitle>
             </TouchableOpacity>
         </Wrapper>
   );

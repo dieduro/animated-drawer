@@ -1,8 +1,9 @@
 export enum ScreenName {
-  START = 'index',
-  CART = 'cart',
-  FAVOURITES = 'favourites',
-  ORDERS = 'orders',
+  START = 'start',
+  CART = 'cart/index',
+  FAVOURITES = 'favourites/index',
+  ORDERS = 'orders/index',
+  CONTACT = 'contact/index',
 }
 
 
@@ -11,6 +12,7 @@ export const ScreenTitles: { [key in ScreenName]: string; } = {
   [ScreenName.CART]: 'Your Cart',
   [ScreenName.FAVOURITES]: 'Favourites',
   [ScreenName.ORDERS]: 'Your Orders',
+  [ScreenName.CONTACT]: 'Contact',
 };
 
 export const Screens = [

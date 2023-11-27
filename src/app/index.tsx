@@ -1,16 +1,9 @@
 import React from 'react';
-import ScreenLayout from '../screens/ScreenLayout';
-import { ScreenComponent } from '../navigation/types';
-import { ScreenName } from '../navigation/enum';
-import { View } from 'react-native';
+import { Redirect } from 'expo-router';
 
-
-const Page: ScreenComponent<ScreenName.START> = () => {
-
+const Page = () => {
   return  (
-        <ScreenLayout name={ScreenName.START}>
-          <View></View>
-        </ScreenLayout>
+    <Redirect href="/(drawer)/start/" />
   );
 };
 

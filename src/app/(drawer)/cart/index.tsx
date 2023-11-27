@@ -1,19 +1,16 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { Text, View } from 'react-native';
 import { ScreenName, ScreenTitles } from '../../../navigation/enum';
 import ScreenLayout from '../../../components/ScreenLayout';
 import Drawer from 'expo-router/drawer';
+import ScreenWrapper from '../../../components/ScreenWrapper';
+import Title from '../../../components/ScreenTitle';
+import { Feather } from '@expo/vector-icons';
 import styled from 'styled-components/native';
+import RowWrapper from '../../../components/RowWrapper';
 
-const ScreenWrapper = styled(View)`
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`;
-
-const Title = styled(Text)`
-  font-size: 24px;
-  font-weight: bold;
+const StyledRowWrapper = styled(RowWrapper)`
+  gap: 16px;
 `;
 
 const Page = () => {
@@ -27,7 +24,10 @@ const Page = () => {
       />
       <ScreenLayout name={ScreenName.CART}>
         <ScreenWrapper>
-          <Title>CART</Title>
+          <StyledRowWrapper>
+            <Title>{ScreenTitles[ScreenName.CART]}</Title>
+            <Feather name="shopping-cart" size={32} color="black" />
+          </StyledRowWrapper>
         </ScreenWrapper>
       </ScreenLayout>
       </>

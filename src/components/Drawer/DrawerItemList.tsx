@@ -1,9 +1,14 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { useNavigation } from 'expo-router';
 import { View } from 'react-native';
-import DrawerItem from './DrawerItem';
 import styled from 'styled-components/native';
 import { ScreenName, ScreenTitles, Screens } from '../../navigation/enum';
+import CustomDrawerItem from './CustomDrawerItem';
+import {
+  DrawerNavigationState,
+  ParamListBase,
+} from '@react-navigation/native';
 
 const Wrapper = styled(View)`
 margin-top: 32px;
@@ -22,33 +27,28 @@ const Divider = styled(View)`
   border: 1px solid #64748bCC;
 `;
 
-const SignOut = styled(DrawerItem)`
+const SignOut = styled(CustomDrawerItem)`
   margin-top: 32px;
 `;
 
-const DrawerItemList = () => {
+const DrawerItemList = ({ state }: { state: DrawerNavigationState<ParamListBase> }) => {
   const { navigate } = useNavigation();
-  const navigation = useNavigation();
-  const state = navigation.getState();
-  const routes = state.routes || [];
+  const activeRoute = state.routes[state.index].name;
 
   const handlePress = (route: string) => {
     navigate(route as never);
   };
-  const activeRouteName = routes[state.index]?.name || ScreenName.START;
 
   return (
     <Wrapper>
       <ScreensMenu>
         {Screens.map(({ name }: { name: string }) => (
-          (name.charAt(0) !== '_' && name.charAt(0) !== '[') && (
-            <DrawerItem
+            <CustomDrawerItem
               key={name}
               title={ScreenTitles[name as ScreenName]}
               onPress={() => handlePress(name)}
-              active={activeRouteName === name}
+              active={activeRoute === name}
           />
-          )
         ))}
       </ScreensMenu>
       <Divider />

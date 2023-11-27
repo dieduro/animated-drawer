@@ -6,6 +6,7 @@ type RootStackParamList = {
   [ScreenName.CART]: undefined;
   [ScreenName.FAVOURITES]: undefined;
   [ScreenName.ORDERS]: undefined;
+  [ScreenName.CONTACT]: undefined;
 };
 
 export type ScreenProps<Name extends keyof RootStackParamList> = NativeStackScreenProps<RootStackParamList, Name>;

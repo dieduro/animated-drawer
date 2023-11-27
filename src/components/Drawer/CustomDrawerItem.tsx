@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import styled from 'styled-components/native';
 
-type DrawerItemProps = {
+type CustomerDrawerItemProps = {
   title: string;
-  onPress: () => void;
+  onPress?: () => void;
   active?: boolean;
   style?: StyleProp<ViewStyle>;
 };
@@ -22,7 +22,7 @@ const ItemTitle = styled(Text)<{ active: boolean }>`
 `;
 
 
-const DrawerItem = ({ title, onPress, active = false, style }: DrawerItemProps) => {
+const CustomDrawerItem = ({ title, onPress, active = false, style }: CustomerDrawerItemProps) => {
   return (
         <Wrapper active={active} style={style}>
             <TouchableOpacity onPress={onPress}>  
@@ -32,4 +32,4 @@ const DrawerItem = ({ title, onPress, active = false, style }: DrawerItemProps) 
   );
 };
 
-export default DrawerItem;
+export default CustomDrawerItem;
